@@ -1,0 +1,11 @@
+{
+  "name": "video-mng",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "browser-sync start -c bs-config.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": ""
+  }
+}
