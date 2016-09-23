@@ -7,24 +7,18 @@ define([
 ], function (app, resource) {
 
 
-    function scrollFunc() {
-
-        var _dir = "scrollLeft";
-
-        var scrollSize = "300";
-
-        var newPos = _scrollObj[_dir] + 1;
-        if (newPos >= scrollSize) {
-            newPos -= scrollSize;
-        }
-        _scrollObj[_dir] = newPos;
-
-    }
-
     app.controller("indexController", (function () {
 
         function IndexController() {
             this.resource = [];
+            this.searchInfo = {
+                name:null
+            };
+            this.options = [
+                {key:'yuri',value:'yuri'},
+                {key:'tiffany',value:'tiffany'},
+                {key:'jessica',value:'jessica'}
+            ]
         }
 
         IndexController.prototype.init = function () {
@@ -32,9 +26,6 @@ define([
 
             self.resource = resource.data;
 
-            _scrollObj =  document.getElementById("content");
-
-            setInterval(scrollFunc, 20);
         };
 
         return IndexController;

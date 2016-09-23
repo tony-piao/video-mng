@@ -1,4 +1,5 @@
 <div ng-init="ctrl.init()">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-chosen-localytics/1.4.0/angular-chosen.min.js"></script>
     <div class="container">
         <div class="row">
             <div class="col-md-4"></div>
@@ -9,17 +10,24 @@
         </div>
     </div>
     <div class="container">
-        <div class="col-md-10">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    通知栏
-                </div>
-                <div class="panel-body">
-                    <div id="content" style="width: 500px">young king young boss</div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        通知栏
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-5">{{ctrl.searchInfo.name}}
+                                <select class="form-control" chosen ng-model="ctrl.searchInfo.name"
+                                        ng-options="item.value as item.key for item in ctrl.options">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-10">
                 <div class="panel panel-info">
@@ -27,24 +35,24 @@
                     <div class="panel-body">
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
-                                    <th class="td-col-s text-center">#</th>
-                                    <th class="td-col-l">视频名</th>
-                                    <th class="td-col-l">摘述</th>
-                                    <th class="td-col-l">链接</th>
-                                    <th class="td-col-l text-center">更新时间</th>
-                                </tr>
+                            <tr>
+                                <th class="td-col-s text-center">#</th>
+                                <th class="td-col-l">视频名</th>
+                                <th class="td-col-l">摘述</th>
+                                <th class="td-col-l">链接</th>
+                                <th class="td-col-l text-center">更新时间</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="entity in ctrl.resource">
-                                    <td class="td-col-s text-center">{{entity.$index}}</td>
-                                    <td class="td-col-l">{{entity.name}}</td>
-                                    <td class="td-col-l">{{entity.description}}</td>
-                                    <td class="td-col-l">
-                                        <a ng-href="{{entity.url}}" target="_blank">{{entity.url}}</a>
-                                    </td>
-                                    <td class="td-col-l text-center">{{entity.updateTime}}</td>
-                                </tr>
+                            <tr ng-repeat="entity in ctrl.resource">
+                                <td class="td-col-s text-center">{{entity.$index}}</td>
+                                <td class="td-col-l">{{entity.name}}</td>
+                                <td class="td-col-l">{{entity.description}}</td>
+                                <td class="td-col-l">
+                                    <a ng-href="{{entity.url}}" target="_blank">{{entity.url}}</a>
+                                </td>
+                                <td class="td-col-l text-center">{{entity.updateTime}}</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>

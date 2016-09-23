@@ -11,7 +11,8 @@ define([
         'ngRoute',
         'ngAnimate',
         'ngCookies',
-        'ngSanitize'
+        'ngSanitize',
+        'localytics.directives'
     ])
 
     .constant('cRoutes', routes)
