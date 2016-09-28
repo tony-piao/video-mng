@@ -1,4 +1,3 @@
-
 require.config({
     baseUrl: '../',
     paths: {
@@ -13,8 +12,9 @@ require.config({
         'underscore': 'libs/underscore.js/1.8.3/underscore',
         'chosen': 'libs/chosen/1.6.2/chosen.jquery',
         'angular-chosen': 'libs/angular-chosen/1.5.0/angular-chosen',
+        'angular-file-upload': 'libs/angular-file-upload/2.3.4/angular-file-upload',
         'md5': 'libs/angular-md5/0.1.8/angular-md5',
-        'angular-drag':'libs/angular-drag/angular-drag',
+        'angular-drag': 'libs/angular-drag/angular-drag',
         'app': 'modules/app'
     },
     waitSeconds: 0,
@@ -28,13 +28,15 @@ require.config({
         'jquery': {exports: 'jQuery'},
         'chosen': ['jquery'],
         'angular-chosen': ['angular', 'chosen'],
+        'angular-file-upload': ['angular'],
         'app': [
             'underscore',
             'angular-route',
             'angular-sanitize',
             'angular-animate',
             'angular-cookies',
-            'angular-chosen'
+            'angular-chosen',
+            'angular-file-upload'
         ]
     },
     deps: ['app']

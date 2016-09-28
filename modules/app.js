@@ -8,23 +8,29 @@ define([
 ], function (angularAMD, angular, routes) {
 
     var mainApp = angular.module('app', [
-        'ngRoute',
-        'ngAnimate',
-        'ngCookies',
-        'ngSanitize',
-        'localytics.directives'
-    ])
+            'ngRoute',
+            'ngAnimate',
+            'ngCookies',
+            'ngSanitize',
+            'localytics.directives',
+            'angularFileUpload'
+        ])
 
-    .constant('cRoutes', routes)
+        .constant('cRoutes', routes)
 
-    .config(function ($routeProvider) {
+        .config(function ($routeProvider) {
 
-        _.each(routes, function (module) {
-            return $routeProvider.when(module.hash, angularAMD.route(module));
-        });
+            _.each(routes, function (module) {
+                return $routeProvider.when(module.hash, angularAMD.route(module));
+            });
 
-    });
+        })
 
+        .controller("appCtrl", appCtrl);
+
+    function appCtrl($location, cRoutes) {
+        //$location.path(cRoutes.index.url);
+    }
 
     return angularAMD.bootstrap(mainApp);
 });

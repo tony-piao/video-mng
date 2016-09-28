@@ -104,7 +104,7 @@
                         };
                         element.on('chosen:hiding_dropdown', function () {
                             return scope.$apply(function () {
-                                return ngModel.$setTouched();
+                                ngModel.$setTouched();
                             });
                         });
                         if (attr.multiple) {
@@ -133,6 +133,11 @@
                                     return updateMessage();
                                 }
                             });
+                        });
+                        scope.$watch(function () {
+                            return element.find('option').length;
+                        }, function () {
+                            element.trigger('chosen:updated');
                         });
                         return scope.$on('$destroy', function (event) {
                             if (typeof timer !== "undefined" && timer !== null) {

@@ -1,5 +1,4 @@
 <div ng-init="ctrl.init()">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-chosen-localytics/1.4.0/angular-chosen.min.js"></script>
     <div class="container">
         <div class="row">
             <div class="col-md-4"></div>
@@ -19,9 +18,16 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-5">{{ctrl.searchInfo.name}}
-                                <select class="form-control" chosen ng-model="ctrl.searchInfo.name"
+                                <select class="form-control" ng-model="ctrl.searchInfo.name"
+                                        chosen
+                                        width="'100%'"
+                                        disable-search = "true"
                                         ng-options="item.value as item.key for item in ctrl.options">
                                 </select>
+                            </div>
+                            <div class="col-md-5 col-lg-offset-2">
+                                <a class="btn btn-info" ng-href="#/image">图片上传</a>
+
                             </div>
                         </div>
                     </div>
