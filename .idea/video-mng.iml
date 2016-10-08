@@ -6,6 +6,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="video-mng node_modules" level="project" />
   </component>
 </module>

@@ -6,6 +6,31 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": ""
+    "browser-sync": "",
+    "extend": "",
+    "glob": "",
+    "gulp": "",
+    "gulp-concat": "",
+    "gulp-debug": "",
+    "gulp-footer": "",
+    "gulp-header": "",
+    "gulp-minify-css": "",
+    "gulp-minify-html": "",
+    "gulp-ng-annotate": "",
+    "gulp-rename": "",
+    "gulp-replace": "",
+    "gulp-sourcemaps": "",
+    "gulp-uglify": "",
+    "gulp-util": "",
+    "http-proxy-middleware": "",
+    "less": "^2.7.1",
+    "morgan": "",
+    "through2": ""
+  },
+  "dependencies": {
+    "angular-chart.js": "^1.0.0",
+    "chart.js": "^2.1.4",
+    "ng-annotate": "^1.2.1",
+    "requirejs": "^2.2.0"
   }
 }
